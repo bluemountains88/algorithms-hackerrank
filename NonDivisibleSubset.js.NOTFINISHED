@@ -1,0 +1,22 @@
+let s = [19,10,12,10,24,25,22];
+let k = 4;
+
+const nonDivisibleSubset = (s,k) => {
+    let n = s.length;
+    let res = [];
+    let aux = [];
+
+    for(let i=0;i<n;i++){
+        for(let j=0; j<n;j++){
+            if(i+j+1<s.length){
+                if((s[i]+s[i+j+1])%k !==0){
+                    res.push(s[i]);
+                }
+            }
+        }   
+
+    }
+    return res;
+}
+
+console.log(nonDivisibleSubset(s,k));
